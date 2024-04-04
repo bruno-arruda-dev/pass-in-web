@@ -83,21 +83,21 @@ export function AttendeeList() {
         setPage(1)
     }
 
-    function goToNextPage() {
-        setCurrentPage(page + 1);
-    }
+    // function goToNextPage() {
+    //     setCurrentPage(page + 1);
+    // }
 
-    function goToPreviousPage() {
-        setCurrentPage(page - 1);
-    }
+    // function goToPreviousPage() {
+    //     setCurrentPage(page - 1);
+    // }
 
-    function goToFirstPage() {
-        setCurrentPage(1);
-    }
+    // function goToFirstPage() {
+    //     setCurrentPage(1);
+    // }
 
-    function goToLastPage() {
-        setCurrentPage(totalPages);
-    }
+    // function goToLastPage() {
+    //     setCurrentPage(totalPages);
+    // }
 
     return (
         <div className="flex flex-col gap-4">
@@ -170,16 +170,16 @@ export function AttendeeList() {
                                 <span>Página {page} de {totalPages}</span>
 
                                 <div className='flex gap-1.5'>
-                                    <IconButton onClick={goToFirstPage} disabled={page === 1} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
+                                    <IconButton onClick={() => setCurrentPage(1)} disabled={page === 1} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
                                         <ChevronsLeft className='size-4' />
                                     </IconButton>
-                                    <IconButton onClick={goToPreviousPage} disabled={page === 1} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
+                                    <IconButton onClick={() => setCurrentPage(page - 1)} disabled={page === 1} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
                                         <ChevronLeft className='size-4' />
                                     </IconButton>
-                                    <IconButton onClick={goToNextPage} disabled={page === totalPages} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
+                                    <IconButton onClick={() => setCurrentPage(page + 1)} disabled={page === totalPages} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
                                         <ChevronRight className='size-4' />
                                     </IconButton>
-                                    <IconButton onClick={goToLastPage} disabled={page === totalPages} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
+                                    <IconButton onClick={() => setCurrentPage(totalPages)} disabled={page === totalPages} className='bg-white/10 border border-white/10 rounded-md p-1.5'>
                                         <ChevronsRight className='size-4' />
                                     </IconButton>
                                 </div>
